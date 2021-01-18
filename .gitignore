@@ -1,0 +1,24 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+/sonarlint/issuestore/index.pb
+/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_10_2.xml
+/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_10_2.xml
+/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_10_2.xml
+/libraries/Maven__com_sun_istack_istack_commons_runtime_3_0_4.xml
+/libraries/Maven__com_sun_xml_fastinfoset_FastInfoset_1_2_13.xml
+/libraries/Maven__javax_activation_activation_1_1.xml
+/libraries/Maven__javax_xml_bind_jaxb_api_2_3_0_b170201_1204.xml
+/libraries/Maven__org_glassfish_jaxb_jaxb_core_2_3_0_b170127_1453.xml
+/libraries/Maven__org_glassfish_jaxb_jaxb_runtime_2_3_0_b170127_1453.xml
+/libraries/Maven__org_glassfish_jaxb_txw2_2_3_0_b170127_1453.xml
+/libraries/Maven__org_jvnet_staxex_stax_ex_1_7_8.xml
+/modules.xml
+/vcs.xml
+/target/
+/.idea/
