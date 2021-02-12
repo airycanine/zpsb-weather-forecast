@@ -11,9 +11,9 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Data {
-    public CurrentCondition current_condition;
-    public Request request;
-    public Weather weather;
+    private CurrentCondition current_condition;
+    private Request request;
+    private Weather[] weather;
 
     Data() {
     }
@@ -22,12 +22,29 @@ public class Data {
         return current_condition;
     }
 
-    public Weather getWeather() {
-        return weather;
-    }
 
     @Override
     public String toString() {
         return "Data{" + "current_condition=" + current_condition.toString() + '}';
+    }
+
+    public void setCurrent_condition(CurrentCondition current_condition) {
+        this.current_condition = current_condition;
+    }
+
+    public Request getRequest() {
+        return request;
+    }
+
+    public void setRequest(Request request) {
+        this.request = request;
+    }
+
+    public Weather[] getWeather() {
+        return weather;
+    }
+
+    public void setWeather(Weather[] weather) {
+        this.weather = weather;
     }
 }

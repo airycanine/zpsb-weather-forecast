@@ -1,6 +1,7 @@
 package pl.qbawalat.weather.frontend;
 
 import pl.qbawalat.weather.api.IpUtils;
+import pl.qbawalat.weather.api.local.weather.xml.model.data.Weather;
 
 import javax.xml.bind.JAXBException;
 import java.util.Scanner;
@@ -30,9 +31,13 @@ public class WeatherProphetManager {
                     switch (userInput) {
                         case "1" -> weatherInfoPrinter.printFullDescription(weatherInfo);
                         case "2" -> weatherInfoPrinter.printTemperatureInfo(weatherInfo);
-                        case "7" -> weatherInfoPrinter.printAllWeatherInfo(weatherInfo);
-                        case "8" -> printConfigMessage();
-                        case "9" -> printQuitMessage();
+                        case "3" -> {
+                            for (Weather weatherPerDay : weatherInfo.getWeather()) {
+                                weatherInfoPrinter.printWeatherInfoForNextDays(weatherPerDay);
+                            }
+                        }
+                        case "8" -> weatherInfoPrinter.printConfigMessage();
+                        case "9" -> weatherInfoPrinter.printQuitMessage();
                         default -> handleWrongInput();
                     }
                     weatherForecastModeActive = !userInput.equals("8") && !userInput.equals("9");
@@ -56,10 +61,10 @@ public class WeatherProphetManager {
                         System.out.println("Podaj lokalizację:");
                         weatherService.setLocalWeatherParamsLocation(inputScanner.nextLine());
                     }
-//                        case "2" -> {
-//                            System.out.println("Podaj ilość dni do przewidzenia:");
-//                            weatherService.setLocalWeatherParamsDays(inputScanner.nextLine());
-//                        }
+                    case "2" -> {
+                        System.out.println("Podaj ilość dni do przewidzenia:");
+                        weatherService.setLocalWeatherParamsDays(inputScanner.nextLine());
+                    }
                     default -> {
                         System.out.println("Tryb pogodynki...");
                         weatherForecastModeActive = true;
@@ -84,23 +89,14 @@ public class WeatherProphetManager {
     }
 
     private void printWeatherInfoOptions() {
-        System.out.println("Prognoza na następne " + weatherService.getNumberOfDays() + " dni.");
         System.out.println(
                 "---------------------------------------------------------------------------------------\nCo sprawdzić?");
-        System.out.println(
-                "    1. Ogólny opis\n    2. Temperatura\n    7. Wszystkie informacje\n    8. Konfiguracja\n    9. Koniec psot");
+        System.out.println("    1. Ogólny opis\n    2. Temperatura\n    3. Pogoda na kolejne " + weatherService.getNumberOfDays() + " dni\n    8. Konfiguracja\n    9. Koniec psot");
     }
 
-    private static void printConfigMessage() {
-        System.out.println("Przechodzę do konfiguracji...");
-    }
 
     private static void handleWrongInput() {
         System.out.println("Niepoprawna wartość. Wybierz jeszcze raz");
-    }
-
-    private static void printQuitMessage() {
-        System.out.println("Bye bye.");
     }
 
 
