@@ -31,6 +31,10 @@ public class WeatherService {
 
     }
 
+    public String getNumberOfDays() {
+        return this.localWeatherParams.getNum_of_days();
+    }
+
     public void setLocalWeatherParamsLocation(String location) {
         this.localWeatherParams.setQ(location);
     }

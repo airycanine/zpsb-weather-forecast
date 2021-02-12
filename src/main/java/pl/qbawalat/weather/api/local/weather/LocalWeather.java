@@ -2,7 +2,6 @@ package pl.qbawalat.weather.api.local.weather;
 
 import pl.qbawalat.weather.api.WwoApi;
 import pl.qbawalat.weather.api.local.weather.xml.model.Data;
-import pl.qbawalat.weather.api.local.weather.xml.model.data.CurrentCondition;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -31,14 +30,6 @@ public class LocalWeather extends WwoApi {
 
         // this will create Java object - Data from the XML response
         weather = (Data) jaxbUnmarshaller.unmarshal(is);
-
-        if (LOGD) {
-            CurrentCondition cc = weather.getCurrent_condition();
-//                System.out.println(cc.getTemp_C());
-//                System.out.println(cc.getWeatherIconUrl());
-//                System.out.println(cc.getWeatherIconUrl());
-        }
-
 
         return weather;
     }

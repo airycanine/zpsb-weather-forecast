@@ -4,9 +4,9 @@ import pl.qbawalat.weather.api.WwoApiRootParams;
 
 public class LocalWeatherParams extends WwoApiRootParams {
     public String extra;
-    public String num_of_days = "5";        //required
+    public String num_of_days = "1";        //required
     public String date;
-    public String fx = "no";
+    public String fx = "yes";
     public String cc;                    //default "yes"
     public String includeLocation;        //default "no"
     public String format;                //default "xml"
@@ -16,8 +16,7 @@ public class LocalWeatherParams extends WwoApiRootParams {
     public String q;                    //required
 
     public LocalWeatherParams(String key) {
-        num_of_days = "2";
-        fx = "no";
+        num_of_days = "1";
         show_comments = "no";
         this.key = key;
     }
@@ -32,5 +31,7 @@ public class LocalWeatherParams extends WwoApiRootParams {
         return this;
     }
 
-
+    public String getNum_of_days() {
+        return num_of_days;
+    }
 }

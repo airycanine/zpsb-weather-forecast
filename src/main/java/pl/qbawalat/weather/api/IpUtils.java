@@ -5,7 +5,7 @@ import java.io.InputStreamReader;
 import java.net.InetAddress;
 import java.net.URL;
 
-public class Utils {
+public class IpUtils {
 
     public static String getIP() {
         String ip = _getIP();

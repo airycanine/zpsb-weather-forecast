@@ -11,9 +11,9 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Data {
-    private CurrentCondition current_condition;
-    private Request request;
-    private Weather weather;
+    public CurrentCondition current_condition;
+    public Request request;
+    public Weather weather;
 
     Data() {
     }
