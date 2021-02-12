@@ -1,4 +1,4 @@
-package pl.qbawalat.weather;
+package pl.qbawalat.weather.api;
 
 import java.lang.reflect.Field;
 import java.net.URLEncoder;
@@ -22,7 +22,7 @@ public class WwoApiRootParams {
                 }
             }
         } catch (Exception e) {
-            System.out.println(e);
+//            System.out.println(e);
         }
 
         return query;

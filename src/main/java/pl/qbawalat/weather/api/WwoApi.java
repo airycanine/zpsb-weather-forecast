@@ -1,4 +1,4 @@
-package pl.qbawalat.weather;
+package pl.qbawalat.weather.api;
 
 import java.io.InputStream;
 import java.net.URL;
@@ -22,7 +22,7 @@ public class WwoApi {
         try {
             is = (new URL(url)).openConnection().getInputStream();
         } catch (Exception e) {
-            System.out.println(e);
+//            System.out.println(e);
         }
 
         return is;

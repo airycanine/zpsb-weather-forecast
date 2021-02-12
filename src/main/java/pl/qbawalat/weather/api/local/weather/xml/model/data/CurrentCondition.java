@@ -1,4 +1,4 @@
-package pl.qbawalat.weather.local.weather.xml.model.data;
+package pl.qbawalat.weather.api.local.weather.xml.model.data;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -79,5 +79,10 @@ public class CurrentCondition {
 
     public String getWeatherIconUrl() {
         return weatherIconUrl;
+    }
+
+    @Override
+    public String toString() {
+        return "CurrentCondition{" + "observation_time='" + observation_time + '\'' + ", weatherCode='" + weatherCode + '\'' + ", weatherDesc='" + weatherDesc + '\'' + ", windspeedMiles='" + windspeedMiles + '\'' + ", windspeedKmph='" + windspeedKmph + '\'' + ", winddirDegree='" + winddirDegree + '\'' + ", winddir16Point='" + winddir16Point + '\'' + ", precipMM='" + precipMM + '\'' + ", humidity='" + humidity + '\'' + ", visibility='" + visibility + '\'' + ", pressure='" + pressure + '\'' + ", cloudcover='" + cloudcover + '\'' + ", temp_C='" + temp_C + '\'' + ", weatherIconUrl='" + weatherIconUrl + '\'' + '}';
     }
 }

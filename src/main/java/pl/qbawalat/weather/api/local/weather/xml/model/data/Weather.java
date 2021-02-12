@@ -1,4 +1,4 @@
-package pl.qbawalat.weather.local.weather.xml.model.data;
+package pl.qbawalat.weather.api.local.weather.xml.model.data;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -72,5 +72,8 @@ public class Weather {
         return precipMM;
     }
 
-    ;
+    @Override
+    public String toString() {
+        return "Weather{" + "date='" + date + '\'' + ", tempMaxC='" + tempMaxC + '\'' + ", tempMaxF='" + tempMaxF + '\'' + ", tempMinC='" + tempMinC + '\'' + ", tempMinF='" + tempMinF + '\'' + ", windspeedMiles='" + windspeedMiles + '\'' + ", windspeedKmph='" + windspeedKmph + '\'' + ", winddirection='" + winddirection + '\'' + ", weatherCode='" + weatherCode + '\'' + ", weatherIconUrl='" + weatherIconUrl + '\'' + ", weatherDesc='" + weatherDesc + '\'' + ", precipMM='" + precipMM + '\'' + '}';
+    }
 }
