@@ -1,6 +1,7 @@
 package pl.qbawalat.weather.api.location.search;
 
-import pl.qbawalat.weather.api.WwoApi;
+import pl.qbawalat.weather.api.WorldWeatherOnlineApi;
+import pl.qbawalat.weather.api.constants.Constants;
 import pl.qbawalat.weather.api.location.search.xml.model.Data;
 
 import javax.xml.bind.JAXBContext;
@@ -8,12 +9,11 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 import java.io.InputStream;
 
-public class LocationSearch extends WwoApi {
-    private static final String FREE_API_ENDPOINT = "http://api.worldweatheronline.com/premium/v1/search.ashx";
+public class LocationSearch extends WorldWeatherOnlineApi {
 
     public LocationSearch() {
         super();
-        apiEndPoint = FREE_API_ENDPOINT;
+        apiEndPoint = Constants.LOCATION_API_ENDPOINT;
     }
 
     public Data callAPI(String query) throws JAXBException {
@@ -28,9 +28,8 @@ public class LocationSearch extends WwoApi {
         Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
 
         // this will create Java object - Data from the XML response
-        Data location = (Data) jaxbUnmarshaller.unmarshal(is);
 
-        return location;
+        return (Data) jaxbUnmarshaller.unmarshal(is);
     }
 
 }

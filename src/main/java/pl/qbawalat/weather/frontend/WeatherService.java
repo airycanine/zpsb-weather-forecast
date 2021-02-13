@@ -1,5 +1,6 @@
 package pl.qbawalat.weather.frontend;
 
+import pl.qbawalat.weather.api.constants.Constants;
 import pl.qbawalat.weather.api.local.weather.LocalWeather;
 import pl.qbawalat.weather.api.local.weather.params.LocalWeatherParams;
 import pl.qbawalat.weather.api.local.weather.xml.model.Data;
@@ -15,7 +16,7 @@ public class WeatherService {
     public WeatherService(String weatherLocation) {
         this.localWeather = new LocalWeather();
         this.locationSearch = new LocationSearch();
-        this.localWeatherParams = new LocalWeatherParams(localWeather.key);
+        this.localWeatherParams = new LocalWeatherParams(Constants.API_KEY);
         this.localWeatherParams.setQ(weatherLocation);
     }
 

@@ -1,8 +1,8 @@
 package pl.qbawalat.weather.api.local.weather.params;
 
-import pl.qbawalat.weather.api.WwoApiRootParams;
+import pl.qbawalat.weather.api.WorldWeatherOnlineApiRootParams;
 
-public class LocalWeatherParams extends WwoApiRootParams {
+public class LocalWeatherParams extends WorldWeatherOnlineApiRootParams {
     public String extra;
     public String num_of_days = "5";        //required
     public String date;

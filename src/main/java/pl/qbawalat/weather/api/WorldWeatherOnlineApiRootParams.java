@@ -3,7 +3,7 @@ package pl.qbawalat.weather.api;
 import java.lang.reflect.Field;
 import java.net.URLEncoder;
 
-public class WwoApiRootParams {
+public class WorldWeatherOnlineApiRootParams {
     public String getQueryString(Class cls) {
         String query = null;
 

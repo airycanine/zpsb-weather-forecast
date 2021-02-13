@@ -4,7 +4,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement(namespace = "com.example.javawwo.LocalWeather.Data")
+@XmlRootElement()
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Request {
     private String type;
@@ -12,6 +12,4 @@ public class Request {
 
     Request() {
     }
-
-    ;
 }
